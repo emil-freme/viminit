@@ -1,0 +1,6 @@
+﻿require("emil.editor")
+--require("emil.plug")
+require("emil.lazy")
+--require("emil.img-clip")
+require("emil.keymaps")
+require("emil.langtool")
