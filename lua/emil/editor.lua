@@ -12,7 +12,7 @@ vim.opt.signcolumn      = "yes"
 vim.opt.termguicolors   = true;
 vim.opt.cursorline      = true;
 vim.opt.scrolloff       = 5;
-vim.cmd([[colorscheme peachpuff]]);
+vim.cmd([[colorscheme pastel-peach-dark]]);
 
 
 vim.g.netrw_liststyle = 3;

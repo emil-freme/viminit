@@ -20,8 +20,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-vim.api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", {})
-vim.api.nvim_set_keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>zn", ":Focus<CR>", {})
+vim.api.nvim_set_keymap("v", "<leader>zn", ":'<,'>Narrow<CR>:Focus<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>t1", ":colorscheme pastel-peach<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>t2", ":colorscheme pastel-peach-dark<CR>", {})
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = "rounded",  -- Border style: "single", "double", "rounded", "solid", or "shadow"
