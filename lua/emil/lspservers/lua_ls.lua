@@ -1,13 +1,14 @@
-local lspconfig = require("lspconfig")
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
     capabilities = capabilities,
     settings = {
         Lua = {
             diagnostics = { globals = { "vim" } },
-            workspace = { checkThirdParty = false }
-        }
-    }
+            workspace = { checkThirdParty = false },
+        },
+    },
 })
+
+vim.lsp.enable("lua_ls")
 

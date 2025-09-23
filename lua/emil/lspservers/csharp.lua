@@ -1,12 +1,13 @@
-local lspconfig = require("lspconfig")
+vim.lsp.config("csharp_ls", {
+    settings = {
+        fileExclusion = {
+            patterns = {
+                "Library/*",
+                "Temp/*",
+            },
+        },
+    },
+})
 
-lspconfig.csharp_ls.setup({
-        settings = {
-            fileExclusion = {
-                patterns = {
-                  "Library/*",
-                  "Temp/*",
-              },
-          },
-      },
-  })
+vim.lsp.enable("csharp_ls")
+

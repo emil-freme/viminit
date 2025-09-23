@@ -1,11 +1,13 @@
-local nvim_lsp = require('lspconfig')
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-nvim_lsp.ts_ls.setup {
+vim.lsp.config("ts_ls", {
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  capabilities = capabilities,
   on_attach = function(client, bufnr)
-    -- Optional: disable tsserver formatting if you use external formatter like prettier
     client.server_capabilities.documentFormattingProvider = false
-    -- Setup keymaps, etc.
   end,
-}
+})
+
+vim.lsp.enable("ts_ls")
+

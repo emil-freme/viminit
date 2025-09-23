@@ -12,6 +12,9 @@ vim.opt.signcolumn      = "yes"
 vim.opt.termguicolors   = true;
 vim.opt.cursorline      = true;
 vim.opt.scrolloff       = 5;
+vim.opt.filetype        = "unix";
+vim.opt.fileencoding    = "utf-8"
+vim.opt.encoding        = "utf-8"
 vim.cmd([[colorscheme pastel-peach-dark]]);
 
 

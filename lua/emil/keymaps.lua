@@ -33,3 +33,15 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   title_pos = 'left',
 })
 
+vim.o.updatetime = 2000
+vim.api.nvim_create_autocmd('CursorHold', {
+  desc = 'Open diagnostic float when cursor holds',
+  pattern = '*',
+  callback = function()
+    vim.diagnostic.open_float(nil, {
+        scope = 'line', -- Or 'cursor'
+        source = 'always', -- Show the source of the diagnostic (e.g., 'lua_ls')
+        border = 'rounded',
+    })
+  end,
+})
