@@ -15,10 +15,12 @@ cmp.setup({
   }),
 })
 
-vim.lsp.config.defaults.capabilities = vim.tbl_deep_extend(
+local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+lspconfig.util.default_config = vim.tbl_deep_extend(
     'force',
-    vim.lsp.config.defaults.capabilities,
-    require('cmp_nvim_lsp').default_capabilities()
+    lspconfig.util.default_config,
+    { capabilities = capabilities }
     )
 
 require("emil.lspservers.lua_ls")

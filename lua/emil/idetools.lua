@@ -28,6 +28,9 @@ return {
     { "neovim/nvim-lspconfig",
         event = "BufReadPre",
         dependencies = {"mason-org/mason.nvim"},
+        config = function()
+            require("emil.lsp_config")
+        end;
     },
     {
         "mason-org/mason-lspconfig.nvim",
