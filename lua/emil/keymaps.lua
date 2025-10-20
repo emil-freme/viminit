@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 
 vim.keymap.set('i', '<ESC>', '<ESC> :w<CR>')
 -- LSP 

@@ -20,6 +20,8 @@ vim.cmd([[colorscheme pastel-peach-dark]]);
 
 vim.g.netrw_liststyle = 3;
 vim.g.netrw_list_hide = ".meta";
+vim.g.netrw_preview = 1;
 
 
 
+vim.g.mapleader = " "

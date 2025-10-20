@@ -1,5 +1,5 @@
 vim.g.airline_theme = "violet"
-vim.g.airline_statusline_ontop = 1
+vim.g.airline_statusline_ontop = 0
 vim.g.airline_powerline_fonts = 1
 vim.g.airline_left_sep=''
 vim.g.airline_right_sep=''
@@ -26,5 +26,5 @@ vim.g.airline_mode_map = {
 
 vim.g["airline#extensions#tabline#enabled"] = 1
 vim.g["airline#extensions#tabline#show_buffers"] = 1
-vim.g["airline#extensions#tabline#buffer_min_count"] = 2
-vim.g["airline#extensions#tabline#formater"] = 'unique_tail'
+vim.g["airline#extensions#tabline#buffer_min_count"] = 0
+vim.g["airline#extensions#tabline#formatter"] = 'unique_tail'
