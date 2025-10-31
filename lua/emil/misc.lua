@@ -41,4 +41,12 @@ return {
         cmd = "PasteImage", -- Example command, adjust if needed
     },
 
+    -- Git client
+    {
+      "NeogitOrg/neogit",
+          dependencies = {
+            "nvim-lua/plenary.nvim", 
+        },
+    },
+
 }
