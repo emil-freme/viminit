@@ -48,5 +48,19 @@ return {
             "nvim-lua/plenary.nvim", 
         },
     },
+    -- Markdown preview
+    -- For `plugins.lua` users.
+    {
+        "OXY2DEV/markview.nvim",
+        lazy = false,
+
+        -- Completion for `blink.cmp`
+        -- dependencies = { "saghen/blink.cmp" },
+    },
+    {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+-- or                              , branch = '0.1.x',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    },
 
 }
