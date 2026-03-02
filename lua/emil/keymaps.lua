@@ -29,6 +29,7 @@ vim.api.nvim_set_keymap("v", "<leader>zn", ":'<,'>Narrow<CR>:Focus<CR>", {})
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+vim.keymap.set('n', '<M-p>', builtin.find_files, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind [B]uffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
@@ -49,6 +50,9 @@ vim.keymap.set('n', '<leader>pi', ':PasteImage<CR>', { desc = '[P]aste [I]mage' 
 -- Markview
 vim.keymap.set('n', '<leader>mp', ':Markview<CR>', { desc = '[M]arkdown [P]review' })
 
+-- Nvim-Tree
+vim.keymap.set('n', '<M-k><M-b>', ':NvimTreeToggle<CR>', { desc = 'Toggle Tree View' })
+
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = "rounded",  -- Border style: "single", "double", "rounded", "solid", or "shadow"
@@ -68,5 +72,5 @@ vim.api.nvim_create_autocmd('CursorHold', {
         source = 'always', -- Show the source of the diagnostic (e.g., 'lua_ls')
         border = 'rounded',
     })
-  end,
+    end,
 })

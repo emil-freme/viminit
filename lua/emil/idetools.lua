@@ -1,10 +1,10 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        event = "BufReadPre",
+        lazy = false,
         build = ":TSUpdate",
         config = function()
-            require("nvim-treesitter.configs").setup({
+            require"nvim-treesitter".setup({
                 ensure_installed = { "c", "cpp", "c_sharp", "lua", "python", "markdown" },
                 sync_install = false,
                 auto_install = true,
@@ -56,5 +56,20 @@ return {
         "majutsushi/tagbar",
         cmd = "TagbarToggle",
     },
+
+    {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("nvim-tree").setup {
+                disable_netrw = false,
+                hijack_netrw = false,
+            }
+        end,
+    }
 
 }
