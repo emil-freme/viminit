@@ -15,23 +15,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.maplocalleader = "\\"
-
--- Setup lazy.nvim
-require("lazy").setup({
+require('lazy').setup({
   spec = {
-    -- import your plugins
-    { import = "emil.themes" },
-    { import = "emil.idetools" },
-    { import = "emil.misc" },
-  },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
-  -- automatically check for plugin updates
-  checker = { enabled = true, notify=false },
-
+    { import = 'emil.lazy.themes' },
+    { import = 'emil.lazy.idefy' }
+  }
 })

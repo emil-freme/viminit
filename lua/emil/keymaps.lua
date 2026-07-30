@@ -1,6 +1,3 @@
--- Autosave
-vim.keymap.set('i', '<ESC>', '<ESC> :w<CR>')
-
 -- LSP 
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
@@ -29,7 +26,6 @@ vim.api.nvim_set_keymap("v", "<leader>zn", ":'<,'>Narrow<CR>:Focus<CR>", {})
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
-vim.keymap.set('n', '<M-p>', builtin.find_files, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind [B]uffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
@@ -38,39 +34,9 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
 vim.api.nvim_set_keymap("n", "<leader>t1", ":colorscheme pastel-peach<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>t2", ":colorscheme pastel-peach-dark<CR>", {})
 
--- Neogit
-vim.keymap.set('n', '<leader>gg', ':Neogit<CR>', { desc = '[G]it Status' })
-
 -- Tagbar
 vim.keymap.set('n', '<leader>tb', ':TagbarToggle<CR>', { desc = '[T]oggle [B]ar' })
 
 -- img-clip (Paste Image)
 vim.keymap.set('n', '<leader>pi', ':PasteImage<CR>', { desc = '[P]aste [I]mage' })
 
--- Markview
-vim.keymap.set('n', '<leader>mp', ':Markview<CR>', { desc = '[M]arkdown [P]review' })
-
--- Nvim-Tree
-vim.keymap.set('n', '<M-k><M-b>', ':NvimTreeToggle<CR>', { desc = 'Toggle Tree View' })
-
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded",  -- Border style: "single", "double", "rounded", "solid", or "shadow"
-  max_width = 80,
-  offset_x = 2,
-  offset_y = 1,
-  title_pos = 'left',
-})
-
-vim.o.updatetime = 2000
-vim.api.nvim_create_autocmd('CursorHold', {
-  desc = 'Open diagnostic float when cursor holds',
-  pattern = '*',
-  callback = function()
-    vim.diagnostic.open_float(nil, {
-        scope = 'line', -- Or 'cursor'
-        source = 'always', -- Show the source of the diagnostic (e.g., 'lua_ls')
-        border = 'rounded',
-    })
-    end,
-})
