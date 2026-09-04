@@ -28,14 +28,13 @@ do
   vim.o.fileencoding = 'utf-8'
   vim.o.encoding = 'utf-8'
   vim.opt.guifont         = {"JetBrainsMono Nerd Font", ":h14"};
-  vim.cmd.colorscheme("pastel-peach-dark")
 end
 
 -- Base Keymaps
 
 do
 -- Autosave keep line
-  vim.keymap.set('i', '<ESC>', '<ESC> :w<CR>k')
+  vim.keymap.set('i', '<ESC>', '<ESC>:w<CR>`^')
 
 	vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -57,7 +56,10 @@ end
 
 -- Netrw Settings
 do
+  vim.keymap.set('n', '<C-k><C-b>', ':Lexplore<CR>', {desc = 'Toggle Netrw'})
+  vim.g.netrw_banner    = 0 
+  vim.g.netrw_alto      = 0
   vim.g.netrw_liststyle = 3
-  vim.g.netrw_preview = 1
+  vim.g.netrw_preview   = 1
 end
 

@@ -18,6 +18,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   spec = {
     { import = 'emil.lazy.themes' },
-    { import = 'emil.lazy.idefy' }
+    { import = 'emil.lazy.idefy' },
+    { import = 'emil.lazy.misc' }
   }
 })
+
+vim.cmd.colorscheme("pastel-peach-dark")

@@ -40,3 +40,15 @@ vim.keymap.set('n', '<leader>tb', ':TagbarToggle<CR>', { desc = '[T]oggle [B]ar'
 -- img-clip (Paste Image)
 vim.keymap.set('n', '<leader>pi', ':PasteImage<CR>', { desc = '[P]aste [I]mage' })
 
+-- Spell
+vim.keymap.set('n', '<leader>sp', ':set spelllang=pt_br spell<CR>', 
+              { desc = 'Enable [S]pell [P]ortuguese' })
+
+vim.keymap.set('n', '<leader>se', ':set spelllang=en spell<CR>', 
+              { desc = 'Enable [S]pell [E]nglish' })
+
+vim.keymap.set('n', '<leader>sb', ':set spelllang=pt_br,en spell<CR>', 
+              { desc = 'Enable [S]pell [B]oth' })
+
+vim.keymap.set('n', '<leader>sd', ':set nospell<CR>', 
+              { desc = '[S]pell [D]isable' })
